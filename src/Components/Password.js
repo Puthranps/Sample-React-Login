@@ -10,8 +10,7 @@ export default class Password extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      password: '',
-      length: 0,
+      password: this.props.password,
       isValid: false
     }
     this.onInputChange.bind(this);
@@ -55,7 +54,11 @@ export default class Password extends Component {
   * @return boolean: If password satisfies all conditions
   */
   isValidPassword(password) {
-
+    if(this.numberCount(this.state.length)&&this.validCapitalCount(password)) {
+      this.setState({ isValid: true });
+      return true; 
+    }
+    return false;
   }
 
 
@@ -63,6 +66,5 @@ export default class Password extends Component {
   * @TODO: Still need to come up with a basic layout ζ༼Ɵ͆ل͜Ɵ͆༽ᶘ
   */
   render() {
-
   }
 }
