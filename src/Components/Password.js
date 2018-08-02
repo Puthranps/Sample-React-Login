@@ -16,6 +16,7 @@ export default class Password extends Component {
     }
     this.onInputChange.bind(this);
     this.numberCount.bind(this);
+    this.validCapitalCount.bind(this);
     this.isValidPassword.bind(this);
   }
 
@@ -28,15 +29,40 @@ export default class Password extends Component {
 
   /**
   * @param password
-  * @return boolean whether the password has at least one number in it
+  * @return boolean: Whether the password has at least one number in it
   */
   numberCount(password) {
     return /\d/.test(password);
   }
 
+  /**
+  * @param password
+  * @return boolean: Whether the password contains at least a single capitalized letter
+  */
+  validCapitalCount(password) {
+    return str.replace(/[^A-Z]/g, "").length > 1;
+  }
+
+  /**
+  * @param password
+  * @return boolean: Password is 5 or more characters
+  */
+  validLength(length) {
+    return length >= minLength;
+  }
+  /**
+  * @param password
+  * @return boolean: If password satisfies all conditions
+  */
+  isValidPassword(password) {
+
+  }
 
 
-  isValidPassword() {
+  /**
+  * @TODO: Still need to come up with a basic layout ζ༼Ɵ͆ل͜Ɵ͆༽ᶘ
+  */
+  render() {
 
   }
 }
