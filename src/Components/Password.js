@@ -1,7 +1,7 @@
 'use strict'
 
 import React, {Component} from 'react';
-import zxcvbn from 'zxcvbn';
+import zxcvbn from 'zxcvbn'; // Will be used for indicating the password strength on display
 
 const minLength = 5; // Password must be at least 5 characters long
 
